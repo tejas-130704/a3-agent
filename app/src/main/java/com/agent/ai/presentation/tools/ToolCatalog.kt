@@ -1,0 +1,75 @@
+package com.agent.ai.presentation.tools
+
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.*
+
+data class ToolInfo(
+    val name: String,
+    val title: String,
+    val description: String,
+    val howItWorks: String,
+    val voiceExample: String,
+    val icon: androidx.compose.ui.graphics.vector.ImageVector
+)
+
+object ToolCatalog {
+    val all: List<ToolInfo> = listOf(
+        ToolInfo("set_alarm", "Alarm", "Set a clock alarm",
+            "Opens the system clock app with hour and minute pre-filled. Skips UI when supported.",
+            "\"Set alarm for 7 AM\"", Icons.Outlined.Alarm),
+        ToolInfo("set_timer", "Timer", "Countdown timer",
+            "Uses ACTION_SET_TIMER to start a countdown without extra permissions.",
+            "\"Set a 10 minute timer\"", Icons.Outlined.Timer),
+        ToolInfo("call_contact", "Call", "Dial by contact name",
+            "Fuzzy-matches your phone contacts, then places the call directly.",
+            "\"Call Mom\"", Icons.Outlined.Phone),
+        ToolInfo("add_calendar_event", "Calendar", "Add calendar event",
+            "Inserts an event into your primary Google/device calendar.",
+            "\"Add meeting tomorrow at 3 PM\"", Icons.Outlined.CalendarMonth),
+        ToolInfo("send_whatsapp", "WhatsApp", "Pre-fill WhatsApp message",
+            "Deep-links to WhatsApp with phone + message. Uses memory for frequent contacts. You tap Send.",
+            "\"WhatsApp John saying I'm on my way\"", Icons.Outlined.Chat),
+        ToolInfo("send_telegram", "Telegram", "Pre-fill Telegram message",
+            "Opens Telegram via username or contact phone lookup.",
+            "\"Telegram Sarah hello\"", Icons.Outlined.Send),
+        ToolInfo("spotify_control", "Spotify", "Music control",
+            "Media keys for play/pause/skip. Search/URI opens Spotify app. Session memory links follow-up requests.",
+            "\"Play Arijit Singh on Spotify\" then \"pause\"", Icons.Outlined.MusicNote),
+        ToolInfo("open_app", "Open App", "Launch any app",
+            "Finds installed apps by friendly name or package.",
+            "\"Open Chrome\"", Icons.Outlined.Apps),
+        ToolInfo("toggle_setting", "Settings", "Device controls",
+            "Flashlight on/off. WiFi/Bluetooth open system panels. Use Volume tool for volume.",
+            "\"Turn on flashlight\" / \"Open WiFi settings\"", Icons.Outlined.Settings),
+        ToolInfo("ui_automation", "UI Control", "Screen automation",
+            "Types into the focused message field (emoji OK), pastes clipboard, taps Send. Enable Accessibility first.",
+            "\"Type hi hello and send\" / \"Paste clipboard and send\"", Icons.Outlined.TouchApp),
+        ToolInfo("read_notifications", "Notifications", "Read notifications aloud",
+            "Reads the latest notifications from your shade. Enable Notification access in Settings first.",
+            "\"Tell me my top 5 notifications\" / \"Read my notifications\"", Icons.Outlined.Notifications),
+        ToolInfo("manage_app", "Install Apps", "Install or uninstall apps",
+            "Checks if installed, opens Play Store to install, or system uninstall dialog. You confirm on screen.",
+            "\"Install Instagram\" / \"Uninstall WhatsApp\"", Icons.Outlined.GetApp),
+        ToolInfo("save_note", "Save Note", "Save to Notes app",
+            "Saves text to MIUI Notes, Google Keep, or your default notes app.",
+            "\"Save this in notes: buy milk tomorrow\"", Icons.Outlined.NoteAlt),
+        ToolInfo("device_status", "Phone Status", "Battery & network info",
+            "Reports battery, WiFi/mobile, link speed estimate, storage, and internet latency.",
+            "\"What's my battery?\" / \"How's my internet?\"", Icons.Outlined.BatteryStd),
+        ToolInfo("navigate_maps", "Maps Nav", "GPS navigation",
+            "Starts turn-by-turn navigation from your location to any address or place.",
+            "\"Navigate to Mumbai airport\" / \"Open maps to Connaught Place\"", Icons.Outlined.Map),
+        ToolInfo("delete_memory", "Delete Memory", "Remove memory nodes",
+            "Deletes memory bubbles or summaries by name match. Also use delete button on Memory tab.",
+            "\"Forget the Spotify memory about Arijit\"", Icons.Outlined.DeleteOutline),
+        ToolInfo("volume_control", "Volume", "Get/set volume",
+            "Read media volume percent or set to exact level e.g. 80%.",
+            "\"Set volume to 80%\" / \"What's my volume?\"", Icons.Outlined.VolumeUp),
+        ToolInfo("web_search", "Web Search", "Search the internet",
+            "Fetches web snippets; chains with save_note to store summaries in Notes.",
+            "\"Search M.Tech process and save to notes\"", Icons.Outlined.TravelExplore),
+        ToolInfo("get_info", "Get Info", "Fetch component info",
+            "Queries live details for alarms, calendar, contacts, settings, installed apps, device status, volume, and notifications.",
+            "\"What alarms are set?\" / \"What events do I have today?\"", Icons.Outlined.Info)
+    )
+}

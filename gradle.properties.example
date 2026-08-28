@@ -1,0 +1,12 @@
+# Copy this file to gradle.properties and fill in your keys.
+# DO NOT commit gradle.properties with real keys to version control.
+
+GROQ_API_KEY=your_groq_api_key_here
+PICOVOICE_ACCESS_KEY=your_picovoice_access_key_here
+
+android.useAndroidX=true
+kotlin.code.style=official
+
+org.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m -Dfile.encoding=UTF-8
+org.gradle.parallel=true
+org.gradle.caching=true

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI Agent</string>
+    <string name="accessibility_service_description">AI Agent uses accessibility to tap buttons and fill text fields when you ask it to control apps on screen. It only acts on your voice commands.</string>
+    <string name="notification_listener_description">AI Agent reads your notification shade aloud when you ask — for example, "tell me my top 5 notifications".</string>
+</resources>
